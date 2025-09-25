@@ -12,6 +12,11 @@ format:
   docx: default
   jats: default
   agu-pdf: default
+  apaquarto-docx: default
+  apaquarto-html: default
+  apaquarto-pdf: default
+  apaquarto-typst: default
+  
 
 
 
