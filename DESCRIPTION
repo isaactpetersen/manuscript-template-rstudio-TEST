@@ -4,6 +4,7 @@ Version: 1.0.0
 Imports:
   knitr,
   rmarkdown,
+  tidyverse,
   petersenlab
 Remotes:
   DevPsyLab/petersenlab
