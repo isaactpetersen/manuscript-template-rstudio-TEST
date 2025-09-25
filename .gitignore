@@ -95,8 +95,8 @@ rsconnect/
 rsconnect
 
 # exclude `_site/` if you are rendering locally and pushing the rendered site to GitHub Pages
-_site/
-_freeze/
+_site/*
+_freeze/*
 
 /.quarto/
 /_manuscript
