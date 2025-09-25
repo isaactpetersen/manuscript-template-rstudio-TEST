@@ -1,0 +1,9 @@
+Package: placeholder
+Title: manuscript-template-rstudio-TEST
+Version: 1.0.0
+Imports:
+  knitr,
+  rmarkdown,
+  petersenlab
+Remotes:
+  DevPsyLab/petersenlab
