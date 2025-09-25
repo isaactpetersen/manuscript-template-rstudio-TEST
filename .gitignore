@@ -1,5 +1,5 @@
 ######################
-# OS generated files 
+# OS generated files
 ######################
 .DS_Store
 .DS_Store?
@@ -106,3 +106,5 @@ _freeze/
 
 /agujournal2019.cls
 /trackchanges.sty
+
+**/*.quarto_ipynb
