@@ -13,7 +13,7 @@ format:
   #jats: default
   #agu-pdf: default
   #apaquarto-docx: default
-  #apaquarto-html: default
+  apaquarto-html: default
   #apaquarto-pdf: default
   #apaquarto-typst: default
   
