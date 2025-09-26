@@ -9,12 +9,10 @@ format:
     toc: true
   apaquarto-docx:
     toc: false
-  apaquarto-typst: # comment out Typst until bug is fixed: https://github.com/quarto-dev/quarto-cli/issues/11552
-    toc: false
-    list-of-figures: false
-    list-of-tables: false
-    format-resources:
-      - _extensions/wjschne/apaquarto/apa.csl
+  #apaquarto-typst: # comment out Typst until bug is fixed: https://github.com/quarto-dev/quarto-cli/issues/11552
+  #  toc: false
+  #  list-of-figures: false
+  #  list-of-tables: false
   apaquarto-pdf:
     documentmode: man
     keep-tex: false
