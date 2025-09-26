@@ -5,6 +5,7 @@ Imports:
   knitr,
   rmarkdown,
   tidyverse,
+  svglite,
   petersenlab
 Remotes:
   DevPsyLab/petersenlab
