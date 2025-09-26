@@ -94,9 +94,12 @@ vignettes/*.pdf
 rsconnect/
 rsconnect
 
-# exclude `_site/` if you are rendering locally and pushing the rendered site to GitHub Pages
+# exclude `_site/`, `index_files/*`, `site_libs/*`, and `notebooks/*_files/` if you are rendering locally and pushing the rendered site to GitHub Pages
 _site/*
 _freeze/*
+index_files/*
+site_libs/*
+notebooks/*_files/
 
 /.quarto/
 /_manuscript
@@ -108,3 +111,5 @@ _freeze/*
 /trackchanges.sty
 
 **/*.quarto_ipynb
+index.fff
+index.ttt
