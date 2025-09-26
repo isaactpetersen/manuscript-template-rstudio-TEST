@@ -5,8 +5,12 @@ execute:
   freeze: auto
 
 format:
-  apaquarto-html:
+  html:
     toc: true
+    comments:
+      hypothesis: true
+  #apaquarto-html:
+  #  toc: true
   apaquarto-docx:
     toc: false
   #apaquarto-typst: # comment out Typst until bug is fixed: https://github.com/quarto-dev/quarto-cli/issues/11552
