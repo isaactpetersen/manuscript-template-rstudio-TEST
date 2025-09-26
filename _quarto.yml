@@ -7,8 +7,16 @@ execute:
 format:
   html:
     toc: true
+    execute:
+      error: true
     comments:
-      hypothesis: true
+      hypothesis:
+        theme: classic
+        openSidebar: false
+        showHighlights: whenSidebarOpen
+    keep-md: true
+    link-external-newwindow: true
+    license: CC BY
   #apaquarto-html:
   #  toc: true
   apaquarto-docx:
