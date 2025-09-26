@@ -4,6 +4,8 @@ project:
 execute:
   freeze: auto
 
+csl: apa.csl
+
 format:
   html:
     toc: true
