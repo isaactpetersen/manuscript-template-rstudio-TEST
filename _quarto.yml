@@ -16,6 +16,7 @@ format:
   apaquarto-pdf:
     documentmode: man
     keep-tex: false
+  jats: default
 #format:
 #  html:
 #    toc: true
