@@ -1,23 +1,21 @@
 project:
   type: manuscript
-  output-dir: _manuscript
 
 execute:
   freeze: auto
 
 format:
-  html:
+  apaquarto-html:
     toc: true
-    comments:
-      hypothesis: true
+#format:
+#  html:
+#    toc: true
+#    comments:
+#      hypothesis: true
   #docx: default
   #jats: default
   #agu-pdf: default
   #apaquarto-docx: default
-  apaquarto-html: default
+  #apaquarto-html: default
   #apaquarto-pdf: default
   #apaquarto-typst: default
-  
-
-
-
