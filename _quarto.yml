@@ -9,13 +9,13 @@ format:
     toc: true
     comments:
       hypothesis: true
-  docx: default
-  jats: default
-  agu-pdf: default
-  apaquarto-docx: default
-  apaquarto-html: default
-  apaquarto-pdf: default
-  apaquarto-typst: default
+  #docx: default
+  #jats: default
+  #agu-pdf: default
+  #apaquarto-docx: default
+  #apaquarto-html: default
+  #apaquarto-pdf: default
+  #apaquarto-typst: default
   
 
 
