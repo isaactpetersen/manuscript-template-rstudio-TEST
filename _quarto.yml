@@ -19,7 +19,7 @@ format:
   #  list-of-tables: false
   apaquarto-pdf:
     documentmode: man
-    keep-tex: false
+    keep-tex: true
   jats: default
 #format:
 #  html:
