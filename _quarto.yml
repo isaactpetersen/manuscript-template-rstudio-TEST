@@ -7,6 +7,15 @@ execute:
 format:
   apaquarto-html:
     toc: true
+  apaquarto-docx:
+    toc: false
+  apaquarto-typst:
+    toc: false
+    list-of-figures: false
+    list-of-tables: false
+  apaquarto-pdf:
+    documentmode: man
+    keep-tex: false
 #format:
 #  html:
 #    toc: true
