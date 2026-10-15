@@ -4,30 +4,14 @@ project:
 execute:
   freeze: auto
 
-csl: apa.csl
-
 format:
   html:
     toc: true
-    execute:
-      error: true
     comments:
-      hypothesis:
-        theme: classic
-        openSidebar: false
-        showHighlights: whenSidebarOpen
-    keep-md: true
-    link-external-newwindow: true
-    license: CC BY
-  #apaquarto-html:
-  #  toc: true
-  apaquarto-docx:
-    toc: false
-  #apaquarto-typst: # comment out Typst until bug is fixed: https://github.com/quarto-dev/quarto-cli/issues/11552
-  #  toc: false
-  #  list-of-figures: false
-  #  list-of-tables: false
-  apaquarto-pdf:
-    documentmode: man
-    keep-tex: true
+      hypothesis: true
+  docx: default
   jats: default
+  agu-pdf: default
+
+
+
