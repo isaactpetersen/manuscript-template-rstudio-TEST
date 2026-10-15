@@ -1,77 +1,71 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
 \documentclass[
-  man,
-  longtable,
-  nolmodern,
-  notxfonts,
-  notimes,
-  colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{apa7}
-
-\usepackage{amsmath}
-\usepackage{amssymb}
-
-
-
-
-\RequirePackage{longtable}
-\RequirePackage{threeparttablex}
-
+]{agujournal2019}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
 \makeatletter
-\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
-	{0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
-	{-.5em}%
-	{\normalfont\normalsize\bfseries\typesectitle}}
-
-\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{0.5em}%
-	{0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
-	{-\z@\relax}%
-	{\normalfont\normalsize\bfseries\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
 \makeatother
 
 
-
-
-\usepackage{longtable, booktabs, multirow, multicol, colortbl, hhline, caption, array, float, xpatch}
-\usepackage{subcaption}
-
-
-\renewcommand\thesubfigure{\Alph{subfigure}}
-\setcounter{topnumber}{2}
-\setcounter{bottomnumber}{2}
-\setcounter{totalnumber}{4}
-\renewcommand{\topfraction}{0.85}
-\renewcommand{\bottomfraction}{0.85}
-\renewcommand{\textfraction}{0.15}
-\renewcommand{\floatpagefraction}{0.7}
-
-\usepackage{tcolorbox}
-\tcbuselibrary{listings,theorems, breakable, skins}
-\usepackage{fontawesome5}
-
-\definecolor{quarto-callout-color}{HTML}{909090}
-\definecolor{quarto-callout-note-color}{HTML}{0758E5}
-\definecolor{quarto-callout-important-color}{HTML}{CC1914}
-\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
-\definecolor{quarto-callout-tip-color}{HTML}{00A047}
-\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
-\definecolor{quarto-callout-color-frame}{HTML}{ACACAC}
-\definecolor{quarto-callout-note-color-frame}{HTML}{4582EC}
-\definecolor{quarto-callout-important-color-frame}{HTML}{D9534F}
-\definecolor{quarto-callout-warning-color-frame}{HTML}{F0AD4E}
-\definecolor{quarto-callout-tip-color-frame}{HTML}{02B875}
-\definecolor{quarto-callout-caution-color-frame}{HTML}{FD7E14}
-
-%\newlength\Oldarrayrulewidth
-%\newlength\Oldtabcolsep
-
-
-\usepackage{hyperref}
-
-
-
-
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -81,7 +75,6 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-
 \usepackage{graphicx}
 \makeatletter
 \newsavebox\pandoc@box
@@ -135,83 +128,21 @@
 
 
 
+\setlength{\emergencystretch}{3em} % prevent overfull lines
 
-
-\usepackage{newtx}
-
-\defaultfontfeatures{Scale=MatchLowercase}
-\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 
 
-
-\title{La Palma Earthquakes}
-
-
-\shorttitle{La Palma Earthquakes}
+ 
 
 
-\usepackage{etoolbox}
-
-
-
-
-
-
-
-
-\authorsnames{Steve Purves,Rowan Cockett}
-
-
-
-
-
-\affiliation{
-{Curvenote}}
-
-
-
-
-\leftheader{Purves and Cockett}
-
-\date{2025-09-27}
-
-
-\abstract{In September 2021, a significant jump in seismic activity on
-the island of La Palma (Canary Islands, Spain) signaled the start of a
-volcanic crisis that still continues at the time of writing. Earthquake
-data is continually collected and published by the Instituto Geográphico
-Nacional (IGN). \ldots{} }
-
-\keywords{La Palma, Earthquakes}
-
-\authornote{\par{\addORCIDlink{Steve
-Purves}{0000-0002-0760-5497}}\par{\addORCIDlink{Rowan
-Cockett}{0000-0002-7859-8394}} 
-
-\par{       Author roles were classified using the Contributor Role
-Taxonomy (CRediT; https://credit.niso.org/) as follows:  Steve
-Purves:   Investigation, Project
-administration, Software, Visualization}
-\par{Correspondence concerning this article should be addressed to Steve
-Purves, Email: \href{mailto:steve@curvenote.com}{steve@curvenote.com}}
-}
-
-\makeatletter
-\let\endoldlt\endlongtable
-\def\endlongtable{
-\hline
-\endoldlt
-}
-\makeatother
-\RequirePackage{longtable}
-\DeclareDelayedFloatFlavor{longtable}{table}
-
-\urlstyle{same}
-
-
-
+\usepackage{url} %this package should fix any errors with URLs in refs.
+\usepackage{lineno}
+\usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
+\usepackage{soul}
+\linenumbers
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -253,46 +184,48 @@ Purves, Email: \href{mailto:steve@curvenote.com}{steve@curvenote.com}}
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
-% From https://tex.stackexchange.com/a/645996/211326
-%%% apa7 doesn't want to add appendix section titles in the toc
-%%% let's make it do it
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
 \makeatletter
-\xpatchcmd{\appendix}
-  {\par}
-  {\addcontentsline{toc}{section}{\@currentlabelname}\par}
-  {}{}
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
+\hypersetup{
+  pdftitle={La Palma Earthquakes},
+  pdfauthor={Steve Purves; Rowan Cockett},
+  pdfkeywords={\xmpquote{La Palma}, \xmpquote{Earthquakes}},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
 
-%% Disable longtable counter
-%% https://tex.stackexchange.com/a/248395/211326
 
-\usepackage{etoolbox}
+\journalname{Earth and Space Science}
 
-\makeatletter
-\patchcmd{\LT@caption}
-  {\bgroup}
-  {\bgroup\global\LTpatch@captiontrue}
-  {}{}
-\patchcmd{\longtable}
-  {\par}
-  {\par\global\LTpatch@captionfalse}
-  {}{}
-\apptocmd{\endlongtable}
-  {\ifLTpatch@caption\else\addtocounter{table}{-1}\fi}
-  {}{}
-\newif\ifLTpatch@caption
-\makeatother
+\draftfalse
 
 \begin{document}
+\title{La Palma Earthquakes}
 
-\maketitle
+\authors{Steve Purves\affil{1}, Rowan Cockett\affil{1}}
+\affiliation{1}{Curvenote, }
+\correspondingauthor{Steve Purves}{steve@curvenote.com}
 
 
+\begin{abstract}
+In September 2021, a significant jump in seismic activity on the island
+of La Palma (Canary Islands, Spain) signaled the start of a volcanic
+crisis that still continues at the time of writing. Earthquake data is
+continually collected and published by the Instituto Geográphico
+Nacional (IGN). \ldots{}
+\end{abstract}
 
-\setcounter{secnumdepth}{3}
-
-\setlength\LTleft{0pt}
+\section*{Plain Language Summary}
+Earthquake data for the island of La Palma from the September 2021
+eruption is found \ldots{}
 
 
 
@@ -303,16 +236,16 @@ Purves, Email: \href{mailto:steve@curvenote.com}{steve@curvenote.com}}
 \href{https://isaactpetersen.github.io/manuscript-template-rstudio-TEST/index.qmd.html}{Article
 Notebook}}
 
-\phantomsection\label{cell-fig-timeline}
+\protect\phantomsection\label{cell-fig-timeline}
 \begin{figure}[H]
-
-\caption{\label{fig-timeline}Timeline of recent earthquakes on La Palma}
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-timeline-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={An event plot of the years of the last 8 eruptions on La Palma.}]{index_files/figure-pdf/fig-timeline-1.pdf}}
 
 }
+
+\caption{\label{fig-timeline}Timeline of recent earthquakes on La Palma}
 
 \end{figure}%
 
@@ -328,10 +261,9 @@ Based on data up to and including 1971, eruptions on La Palma happen
 every 79.8 years on average.
 
 Studies of the magma systems feeding the volcano, such as Marrero et al.
-(\citeproc{ref-marrero2019}{2019}), have proposed that there are two
-main magma reservoirs feeding the Cumbre Vieja volcano; one in the
-mantle (30-40km depth) which charges and in turn feeds a shallower
-crustal reservoir (10-20km depth).
+(2019), have proposed that there are two main magma reservoirs feeding
+the Cumbre Vieja volcano; one in the mantle (30-40km depth) which
+charges and in turn feeds a shallower crustal reservoir (10-20km depth).
 
 Eight eruptions have been recorded since the late 1400s
 (Figure~\ref{fig-timeline}).
@@ -341,7 +273,7 @@ Data and methods are discussed in Section~\ref{sec-data-methods}.
 Let \(x\) denote the number of eruptions in a year. Then, \(x\) can be
 modeled by a Poisson distribution
 
-\begin{equation}\phantomsection\label{eq-poisson}{
+\begin{equation}\protect\phantomsection\label{eq-poisson}{
 p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
 }\end{equation}
 
@@ -349,12 +281,13 @@ where \(\lambda\) is the rate of eruptions per year. Using
 Equation~\ref{eq-poisson}, the probability of an eruption in the next
 \(t\) years can be calculated.
 
-\begin{table}
-
-{\caption{{Recent historic eruptions on La Palma}{\label{tbl-history}}}
-\vspace{-20pt}}
-
 \begin{longtable}[]{@{}ll@{}}
+\caption{Recent historic eruptions on La
+Palma}\label{tbl-history}\tabularnewline
+\toprule\noalign{}
+Name & Year \\
+\midrule\noalign{}
+\endfirsthead
 \toprule\noalign{}
 Name & Year \\
 \midrule\noalign{}
@@ -371,20 +304,18 @@ Tajuya near El Paso & 1585 \\
 Montaña Quemada & 1492 \\
 \end{longtable}
 
-\end{table}
-
 Table~\ref{tbl-history} summarises the eruptions recorded since the
 colonization of the islands by Europeans in the late 1400s.
 
 \begin{figure}
-
-\caption{\label{fig-map}Map of La Palma}
 
 \centering{
 
 \pandocbounded{\includegraphics[keepaspectratio]{images/la-palma-map.png}}
 
 }
+
+\caption{\label{fig-map}Map of La Palma}
 
 \end{figure}%
 
@@ -393,14 +324,14 @@ the Canary Islands (Figure~\ref{fig-map}).
 
 \begin{figure}[H]
 
-\caption{\label{fig-spatial-plot}Locations of earthquakes on La Palma
-since 2017}
-
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-latex/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={A scatterplot of earthquake locations plotting latitude against longitude.}]{index_files/figure-latex/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png}}
 
 }
+
+\caption{\label{fig-spatial-plot}Locations of earthquakes on La Palma
+since 2017}
 
 \end{figure}%
 
@@ -418,8 +349,10 @@ on La Palma.
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
-\phantomsection\label{refs}
+\protect\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
+\vspace{1em}
+
 \bibitem[\citeproctext]{ref-marrero2019}
 Marrero, J., García, A., Berrocoso, M., Llinares, Á., Rodríguez-Losada,
 A., \& Ortiz, R. (2019). Strategies for the development of volcanic
@@ -428,8 +361,6 @@ hazard maps in monogenetic volcanic fields: The example of {La} {Palma}
 \url{https://doi.org/10.1186/s13617-019-0085-5}
 
 \end{CSLReferences}
-
-
 
 
 
